@@ -17,12 +17,12 @@
                 <el-icon><Place /></el-icon>
                 <span>多源病历</span>
               </template>
-              <el-menu-item-group title="Group One">
+              <el-menu-item-group >
                 <el-menu-item index="1-1" @click="handleRoute('fangyao')"  >方药</el-menu-item>
-                <el-menu-item index="1-2" @click="handleRoute('lizi')">lizi</el-menu-item>
-                <el-menu-item index="1-3" @click="handleRoute('fangjie')">fangjie</el-menu-item>
+                <el-menu-item index="1-2" @click="handleRoute('lizi')">例子</el-menu-item>
+                <el-menu-item index="1-3" @click="handleRoute('fangjie')">方解</el-menu-item>
                 <el-menu-item index="1-4" @click="handleRoute('zucheng')">组成</el-menu-item>
-                <el-menu-item index="1-5" @click="handleRoute('jiajian')">jiajian</el-menu-item>
+                <el-menu-item index="1-5" @click="handleRoute('jiajian')">加减</el-menu-item>
               </el-menu-item-group>
             </el-sub-menu>
             <el-sub-menu index="2">
