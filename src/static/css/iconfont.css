@@ -1,0 +1,51 @@
+@font-face {
+    font-family: "iconfont";
+    /* Project id 3590442 */
+    src: url('//at.alicdn.com/t/c/font_3590442_d9mpwv4ws2d.woff2?t=1663737233316') format('woff2'),
+        url('//at.alicdn.com/t/c/font_3590442_d9mpwv4ws2d.woff?t=1663737233316') format('woff'),
+        url('//at.alicdn.com/t/c/font_3590442_d9mpwv4ws2d.ttf?t=1663737233316') format('truetype');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-mingcishuyu:before {
+    content: "\e62f";
+}
+
+.icon-shiyuanxingjibing:before {
+    content: "\e60f";
+}
+
+.icon-jibingbaike:before {
+    content: "\e610";
+}
+
+.icon-shebeileishebeichucun:before {
+    content: "\ea23";
+}
+
+.icon-chengxu:before {
+    content: "\e60b";
+}
+
+.icon-demand:before {
+    content: "\e62c";
+}
+
+.icon-drug-full:before {
+    content: "\e88a";
+}
+
+.icon-fanxiangguancha:before {
+    content: "\e605";
+}
+
+.icon-wenduceliang:before {
+    content: "\e60e";
+}
