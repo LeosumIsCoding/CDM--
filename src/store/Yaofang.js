@@ -5,7 +5,7 @@ const yaofangStore = {
     state: {
         yaofangs: [],
         input:{
-            fangyao:"21",
+            fangyao:"白术",
             lizi:"",
             fangjie:"",
             zucheng:"",
@@ -34,17 +34,32 @@ const yaofangStore = {
 
     getters:{
         getFangyaoNeed(state){
+            // debugger
             let input = state.input.fangyao
             let str = input.split(" ")
             let yaofangs = state.yaofangs
             let result = yaofangs.filter(value=>{
                 for(let i = 0; i<str.length; i++){
-                    let status = value.mades.find(item=> item.name.includes(str[i]))
-                    if(typeof(status) == "undefined"){
+                    // debugger
+                    let status = value.mades.filter(item=> item.name.includes(str[i]))
+                    if(status == 0){
                         return false
                     }
                 }                
                 return true
+            })
+            console.log(result);
+            return result
+        },
+        getLiziNeed(state){
+            let input = state.input.lizi
+            let lizi = state.yaofangs
+            let result = lizi.filter(value=>{
+                if(value.cases.includes(input)){
+                    return true
+                }else{
+                    return false
+                }
             })
             console.log(result);
             return result

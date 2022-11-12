@@ -94,6 +94,7 @@ const props = defineProps({
 #main{
     margin: 20px;
     color: rgb(255, 255, 255);
+    border-radius: 20px;
     background-color: rgb(99, 117, 105);
     .title{
         font-size: 20px;
