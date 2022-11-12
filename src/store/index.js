@@ -1,5 +1,6 @@
 import { createStore } from 'vuex';
 
+import yaofangStore from './Yaofang';
 export default createStore({
     state: {
         DoMAINList: [{
@@ -179,6 +180,10 @@ export default createStore({
             }
         ],
         isClose: true
+    },
+
+    modules:{
+        "Yaofang":yaofangStore
     },
     mutations: {
         CHANGEISCLOSE(state) {

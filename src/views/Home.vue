@@ -142,7 +142,8 @@
 </template>
 
 <script setup>
-import { ref, reactive, onMounted } from "vue";
+import { ref, reactive, onMounted,getCurrentInstance } from "vue";
+import {useStore} from 'vuex'
 import { useRouter, useRoute } from "vue-router";
 import { watch } from "vue";
 import debounce from "../utils/debounce";
@@ -205,6 +206,9 @@ onMounted(() => {
   let user = JSON.parse(localStorage.getItem("token"));
   state.user = user;
   state.routeQuery = route.query.tableName || "";
+
+  const store = useStore();
+  store.commit("Yaofang/updateYaofang")
 });
 
 const handleOpen = (key, keyPath) => {};
