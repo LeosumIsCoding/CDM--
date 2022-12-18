@@ -137,7 +137,7 @@ const handleRegister = () => {
         username: state.username,
         password: state.password,
         email: state.email,
-        type: state.type,
+        type: state.radio,
       })
       .then((res) => {
         if (res.data.data == 1) {

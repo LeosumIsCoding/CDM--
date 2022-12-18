@@ -7,10 +7,18 @@ const routes = [
     {
         path: "/home",
         name: "Home",
-        redirect: "/standard",
+        redirect: "/cover",
         component: () => import("../views/Home.vue"),
         children: [
             {
+                path:"/cover",
+                name:"Cover",
+                component:() => import("../views/MultipleCases/cover.vue"),
+                meta:{
+                    searchShow: false
+                }
+            }
+            ,{
                 path: "/standard",
                 name: "Standard",
                 component: () => import("../views/CdmManage/Standard.vue"),
@@ -90,8 +98,25 @@ const routes = [
             },{
                 path:"/zucheng",
                 name:"zucheng",
-                component:()=>import("../views/MultipleCases/zucheng.vue")}
-
+                component:()=>import("../views/MultipleCases/zucheng.vue")
+            },
+            {
+                path: '/manage',
+                name: 'Manage',
+                component: () => import("../views/Manage.vue"),
+                meta: {
+                    searchShow: false
+                },
+            },
+            {
+                path:"/alluser",
+                name:"AllUser",
+                component:() => import("../views/manage/AllUser.vue"),
+                meta:{
+                    searchShow: false
+                }
+            }
+            
         ]
     }, {
         path: '/login',
@@ -107,7 +132,8 @@ const routes = [
         meta: {
             searchShow: false
         }
-    }
+    },
+
 ];
 
 export default routes;

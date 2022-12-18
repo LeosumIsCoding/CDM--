@@ -109,6 +109,7 @@ const handleLogin = () => {
       if (res.status == 200 && res.data != "") {
         if (res.data.username != "-1") {
           localStorage.setItem("token", JSON.stringify(res.data));
+          localStorage.setItem("shenfen", state.radio)
           ElMessage({
             message: "登录成功",
             type: "success",

@@ -7,12 +7,12 @@
             active-text-color="#ffd04b"
             background-color="#545c64"
             class="el-menu-vertical-demo"
-            default-active="1-1"
+
             text-color="#fff"
             @open="handleOpen"
             @close="handleClose"
           >
-            <el-sub-menu index="1">
+            <el-sub-menu index="1" >
               <template #title>
                 <el-icon><Place /></el-icon>
                 <span>多源病历</span>
@@ -25,7 +25,7 @@
                 <el-menu-item index="1-5" @click="handleRoute('jiajian')">加减</el-menu-item>
               </el-menu-item-group>
             </el-sub-menu>
-            <el-sub-menu index="2">
+            <el-sub-menu index="2" >
               <template #title>
                 <el-icon><CopyDocument /></el-icon>
                 <span>CDM管理</span>
@@ -64,17 +64,17 @@
                 <el-menu-item index="4-2">item one</el-menu-item>
               </el-menu-item-group>
             </el-sub-menu>
-            <el-sub-menu index="5">
+            <el-sub-menu index="5" v-if="state.shenfen == 2">
               <template #title>
                 <el-icon><IconMenu /></el-icon>
                 <span>系统用户管理</span>
               </template>
-              <el-menu-item-group title="Group One">
-                <el-menu-item index="5-1">item one</el-menu-item>
-                <el-menu-item index="5-2">item one</el-menu-item>
+              <el-menu-item-group>
+                <el-menu-item index="5-1" @click="handleRoute('AllUser')">用户管理</el-menu-item>
+
               </el-menu-item-group>
             </el-sub-menu>
-            <el-sub-menu index="6">
+            <el-sub-menu index="6" v-if="state.shenfen == 2">
               <template #title>
                 <el-icon><Setting /></el-icon>
                 <span>模块设置</span>
@@ -164,6 +164,7 @@ const state = reactive({
   search: "",
   routeQuery: "",
   resultList: [],
+  shenfen:localStorage.getItem("shenfen")
 });
 
 // betterScroll
@@ -209,6 +210,7 @@ onMounted(() => {
 
   const store = useStore();
   store.commit("Yaofang/updateYaofang")
+  console.log(state.shenfen,"?????????????????????????");
 });
 
 const handleOpen = (key, keyPath) => {};
