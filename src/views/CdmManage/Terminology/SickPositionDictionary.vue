@@ -3,13 +3,13 @@
     <div class="tableContain">
       <ul>
         <li>
-          <span>术语类目代码</span>
-          <span>中医证候名术语与分类</span>
+          <span>ID</span>
+          <span>病位字典名称</span>
         </li>
         <li v-for="(item, index) in state.tableData" :key="index">
-          <span> {{ item.termcategorycode }} </span
-          ><span :style="{ textIndent: `${item.termtype}em` }">
-            {{ item.classification }}
+          <span> {{ item.sid }} </span
+          ><span>
+            {{ item.title }}
           </span>
         </li>
       </ul>
@@ -28,7 +28,7 @@
 
 <script setup>
 import { onMounted, reactive, watch, computed, ref } from "vue";
-import { getSyndromeCategory } from "@/http/api/Terminology.js";
+import { getSickPositionDictionaryPages } from "@/http/api/Terminology.js";
 import { useStore } from "vuex";
 
 const store = useStore();
@@ -43,7 +43,7 @@ const state = reactive({
 });
 
 const getPageInfo = () => {
-  getSyndromeCategory(state.page, state.pageSize).then((res) => {
+  getSickPositionDictionaryPages(state.page, state.pageSize).then((res) => {
     state.tableData = res.data.records;
     state.totalPage = res.data.pages;
     console.log(res);

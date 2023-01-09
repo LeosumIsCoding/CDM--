@@ -8,6 +8,17 @@ const handleSearchClassficiation = (tableName, kw) => {
     });
 };
 
+
+// 标准分词搜索
+const standardSearch = (tableName, keyWord) => {
+    return http.post("/standardized/search", {
+        tableName,
+        keyWord
+    });
+};
+
+
 export {
-    handleSearchClassficiation
+    handleSearchClassficiation,
+    standardSearch
 };

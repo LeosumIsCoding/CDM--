@@ -190,10 +190,11 @@ const getDrugsInfo = () => {
   http
     .post("/drug", {
       tableName: state.tableName,
-      page: state.page - 1,
+      page: (state.page - 1) * state.pageSize,
       pageSize: state.pageSize,
     })
     .then((res) => {
+      console.log(res);
       // console.log(res);
 
       state.records = res.data;

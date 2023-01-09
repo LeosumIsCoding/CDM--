@@ -24,7 +24,6 @@ const yaofangStore = {
         async updateYaofang(state){
             const res = await http.get("/yaofang/get/allYaofang")
             state.yaofangs = res.data
-            console.log(state.yaofangs);
         },
         changeFangyaoIndex(state, index){
             // state.index.fangyao = index

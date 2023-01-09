@@ -3,14 +3,19 @@
     <div class="tableContain">
       <ul>
         <li>
-          <span>术语类目代码</span>
-          <span>中医证候名术语与分类</span>
+          <span>章节或编码</span>
+          <span>中文名称</span>
+          <span
+            >是否为有效码 (注意：标示为“否”者是章、节代码，
+            或具有细分亚目的类目编码； 在编码时应当采用有效码）</span
+          >
         </li>
         <li v-for="(item, index) in state.tableData" :key="index">
-          <span> {{ item.termcategorycode }} </span
-          ><span :style="{ textIndent: `${item.termtype}em` }">
-            {{ item.classification }}
+          <span> {{ item.chapterorcode }} </span
+          ><span>
+            {{ item.chinesename }}
           </span>
+          <span>{{ item.isitavalidcode }}</span>
         </li>
       </ul>
       <div class="demo-pagination-block">
@@ -28,7 +33,7 @@
 
 <script setup>
 import { onMounted, reactive, watch, computed, ref } from "vue";
-import { getSyndromeCategory } from "@/http/api/Terminology.js";
+import { getICDPages } from "@/http/api/Terminology.js";
 import { useStore } from "vuex";
 
 const store = useStore();
@@ -43,7 +48,7 @@ const state = reactive({
 });
 
 const getPageInfo = () => {
-  getSyndromeCategory(state.page, state.pageSize).then((res) => {
+  getICDPages(state.page, state.pageSize).then((res) => {
     state.tableData = res.data.records;
     state.totalPage = res.data.pages;
     console.log(res);
@@ -89,6 +94,9 @@ watch(
         padding: 7px;
         box-sizing: border-box;
         text-align: left;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
       &:nth-child(1) {
         color: #000;

@@ -19,6 +19,14 @@
             @open="handleOpen"
             @close="handleClose"
           >
+            <!-- StandardizedWordSegmentation -->
+            <el-menu-item
+              index="0"
+              @click="handleRoute('StandardizedWordSegmentation')"
+            >
+              <el-icon><Compass /></el-icon>
+              <template #title>数据标准化分词</template>
+            </el-menu-item>
             <el-menu-item index="1" @click="handleRoute('DiseaseCategory')">
               <el-icon><Promotion /></el-icon>
               <template #title>中医疾病类目</template>
@@ -30,6 +38,28 @@
             <el-menu-item index="3" @click="handleRoute('GovernanceTerms')">
               <el-icon><icon-menu /></el-icon>
               <template #title>治法术语</template>
+            </el-menu-item>
+            <el-menu-item index="4" @click="handleRoute('ICD-11MMS')">
+              <el-icon><Headset /></el-icon>
+              <template #title>ICD-11简明编码列表</template>
+            </el-menu-item>
+            <el-menu-item
+              index="5"
+              @click="handleRoute('SickPositionDictionary')"
+            >
+              <el-icon><Cherry /></el-icon>
+              <template #title>病位字典</template>
+            </el-menu-item>
+            <el-menu-item
+              index="6"
+              @click="handleRoute('PathologicalDictionary')"
+            >
+              <el-icon><CollectionTag /></el-icon>
+              <template #title>病性字典</template>
+            </el-menu-item>
+            <el-menu-item index="7" @click="handleRoute('TCMTerminology')">
+              <el-icon><HelpFilled /></el-icon>
+              <template #title>中医术语</template>
             </el-menu-item>
           </el-menu>
         </div>
@@ -49,6 +79,11 @@ import {
   Finished,
   DArrowLeft,
   DArrowRight,
+  Headset,
+  Cherry,
+  CollectionTag,
+  Compass,
+  HelpFilled,
 } from "@element-plus/icons-vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";

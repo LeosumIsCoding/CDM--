@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+    <div class="container">
     <div class="searchBox">
       <h2>搜索</h2>
       <el-input v-model="state.search" placeholder="Please input" clearable />
@@ -19,7 +19,7 @@
             <p>{{ item.name }}</p>
             <p><i :class="item.ico"></i></p>
             <p>
-              <el-icon><Document /></el-icon>
+              <!-- <el-icon><Document /></el-icon> -->
               {{ item.totalCount }}
             </p>
           </div>
